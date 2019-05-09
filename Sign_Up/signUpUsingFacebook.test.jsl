@@ -1,0 +1,13 @@
+const signUpUsingFacebook = require('./signUpUsingFacebook')
+
+it('"Passing" Test for Signing Up with Facebook', async () => {
+    const facebookToken = 'EAAIZCRdirl3wBAJrV6T6b9eOMoYDZA9vZAQJZAZAUodYSnVcIExITkTGiaGOWfDEiqLwqZCWM6QLDyD8QqlSvijDWvxzPG7AMvmHRbShZBjAohfIUP7txZA6RwarGBc6rFwzZCHvsszFnhRFC3zkHZAD9YYnC3b29bGUZBQ1P6AJuV33vscAB5ChasD3IoNlQaoRzf5pP7B1Lg821mt0lGCc4K6A0SMHeePcJteNUmEURUuZAAZDZD'
+    const response = await signUpUsingFacebook(facebookToken)
+    expect(response.status).toBe(200)
+});
+
+it('"Failing Test for Signing Up With Facebook"', async () => {
+    const facebookToken = 'EAAIZCRdirl3wBAJrV6T6b9eOMoYDZA9vZAQJZAZAUodYSnVcIExITkTGiaGOWfDEiqLwqZCWM6QLDyD8QqlSvijDWvxzPG7AMvmHRbShZBjAohfIUP7txZA6RwarGBc6rFwzZCHvsszFnhRFC3zkHZAD9YYnC3b29bGUZBQ1P6AJuV33vscAB5ChasD3IoNlQaoRzf5pP7B1Lg821mt0lGCc4K6A0SMHeePcJteNUmEURUuZAAZDZD'
+    const response = await signUpUsingFacebook(facebookToken)
+    expect(response.status).toBe(400)
+});
